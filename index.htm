@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">  
+    <LINK rel="shortcut icon" href="public/img/favicon.ico">
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <script  src="public/js/jquery-3.7.0.js"></script>
+    <style>
+        .logo{
+            display: flex;
+            justify-content: center;
+            background-image: url('./assets/img/logo.jpg');
+            background-size: cover;
+            width:600px;
+            height:300px;
+            margin-left:350px;
+            margin-top:150px;
+        }
+        .tt{
+            margin-top: 230px;
+            font-size: xx-large;
+            color: rgb(214, 220, 226);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div id="logo" class="logo">
+<h1 class="tt">Welcome to Antai Medics</h1>
+    </div>
+    <script lang="text/javascript">
+ (function(){
+            $('#splash').ready() 
+            {
+               
+                setTimeout(function() {
+                    $('#logo').ready(function() {
+                        $('#splash').remove();
+                        window.location.href = "login.htm";
+                        
+                    });
+                }, 5000);
+            }
+          }());
+    </script>
+     
+</body>
+</html>

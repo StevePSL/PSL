@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="public/font-awesome-4.7.0/css/font-awesome.min.css">  
+    <LINK rel="shortcut icon" href="public/img/favicon.ico">
+    <title>Login</title>
+    <style>
+        *{
+            list-style: none;
+            text-decoration: none;
+        }
+        .regfrm{
+            width:30%;
+            height:100%;
+            border-radius:10px;
+        }
+        .regfrm ul{
+            display:inline;
+           
+        }
+     
+        .regfrm ul li input{
+         float:right;
+         clear:both;
+           
+        }
+        .hdr{
+            margin-top:20px;
+            margin:0px;
+            padding:0px;
+            background-color: #0c63b4;
+            width:100%;
+            height:70px;
+            color: #fff;
+            font-size: 14px;;
+        }
+        .hdr ul{
+            display:flex;
+            margin:0px;
+            padding:0px;
+            justify-content:end;
+            gap:15px;
+        }
+        .hdr ul li{
+            margin-top:20px;
+            padding:0px;
+        }
+        .hdr ul li a{
+            color:#fff;
+            text-decoration: none;
+        }
+        .hdr div{
+            background-image: url('assets/img/logo-pre.png');
+            background-size: cover;
+            width:70px;
+            height:70px;
+            float:left;
+            border-radius: 70px;
+        }
+        .hdr div::after{
+            prefix: 'HEALTHCARE';
+        }
+        .btn{
+            background-color: primary;
+            width:auto;
+            height:25px;
+        }
+        .logo-pre.png{
+            background-image: url('/v/assets/img/logo-pre.png2.jpg');
+            background-size: cover;
+            width:70px;
+            height:70px;
+        }
+        .lbl{
+            margin-left:5px;
+            margin-top: 500px;
+            width:100%;
+            height:auto;
+        }
+        .wrapper{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            width:500px;
+            height:300px;
+            margin-top: 100px;
+            margin-left: 400px;
+            padding:0px;
+            border:1px solid #0c63b4;
+            box-shadow: #01274b;
+        }
+        .lgnFrm{
+
+            width:calc(20%);
+            margin-left:100px;
+        }
+        .lgnFrm ul li input{
+            background-color: rgb(241, 236, 236);
+            border-radius: 5px;;
+        }
+        .sgnUp{
+            text-decoration: none;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+           
+            font-size: 15px;
+            margin-left:150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form method="POST" >
+            <header class="hdr">
+                <div></div><span class="lbl">ANTAI HEALTHCARE</span>
+
+                
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Enquiry</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </header>
+           <fieldset class="lgnFrm">
+            <legend>Login</legend>           
+            <ul>
+                <li><label>Select Role</label></li>
+                <li><select id="rol"><option value="Doctor">Doctor</option><option value="Patient">Patient</option></select></li>
+                <li><label>Enter Username/Email</label></li>
+                <li><input type="text" name="usrnme" id="usrnme"></li>
+                <li><label>Password</label></li>
+                <li><input type="password" name="pwd" id="pwd"></li>
+
+            </ul>
+            <button type="button"  onclick="loger();">Login</button>|<button>Reset</button>
+           </fieldset>
+           <a class="sgnUp" href="reg.htm">Not a User? Sign up</a>
+        </form>
+        
+    </form>
+    <script src="connect.js"></script>
+    <script src="public/js/jquery-3.7.0.js"></script>
+    <script>
+        function loger(){
+            let lgnme,pwcde,rol = '';
+            rol = document.getElementById('rol').value;
+            lgnme = document.getElementById('usrnme').value;
+            pwcde = document.getElementById('pwd').value;
+           // alert("rol: "+ rol);
+            //alert("Email: "+ lgnme);
+           //alert("Password: "+ pwcde);
+            dtb.lgIn(lgnme,pwcde,rol);
+        }
+    </script>
+</body>
+</html>
